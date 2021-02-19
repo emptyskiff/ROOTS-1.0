@@ -764,8 +764,14 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -787,6 +793,18 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
