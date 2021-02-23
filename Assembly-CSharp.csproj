@@ -72,6 +72,8 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Try\Interactable.cs" />
     <Compile Include="Assets\Scripts\Try\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Try\InventoryObj.cs" />
+    <Compile Include="Assets\Scripts\Try\InventorySyst.cs" />
     <Compile Include="Assets\Scripts\Try\PlayerInteraction.cs" />
     <Compile Include="Assets\Scripts\Try\RaySelectable.cs" />
     <Compile Include="Assets\Scripts\Try\RaycastExample.cs" />
@@ -643,6 +645,15 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProGrids.Editor">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
@@ -661,23 +672,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder">
-      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.Editor">
-      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

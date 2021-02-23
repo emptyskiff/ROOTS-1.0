@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
 
             if (interactable !=null)
             {
-                HandleInteraction(interactable);
+                HandleInteraction(interactable, GameObject.FindGameObjectWithTag("Player"));
                 interactionText.text = interactable.GetDescription();
                 successfullHit = true;
             }
@@ -36,7 +36,7 @@ public class PlayerInteraction : MonoBehaviour
     }
 
 
-    void HandleInteraction(Interactable interactable)
+    void HandleInteraction(Interactable interactable, GameObject player)
     {   Input.GetMouseButtonDown(0);
         switch (interactable.interactionType)
         {
@@ -57,6 +57,7 @@ public class PlayerInteraction : MonoBehaviour
             case Interactable.InteractionType.Inventory:
                 if(Input.GetMouseButtonDown(0))
                 {
+                    interactable.player = player;
                     interactable.Interact();
                 }
                 break;

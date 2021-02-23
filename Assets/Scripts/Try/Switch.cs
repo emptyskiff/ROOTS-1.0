@@ -30,5 +30,7 @@ public class Switch : Interactable
     {
         isOn = !isOn;
         UpdateLight();
+        Debug.Log(player.name);
+
     }
 }

@@ -12,14 +12,14 @@ public class Inventory : ScriptableObject
     public struct CollectableItems
     {
         public GameObject Prefab;
-        public ItemsType Description;
+        public string name;
     }
     public CollectableItems[] Items;
+   
 
 
-
-    private Dictionary<ItemsType, GameObject> collection = new Dictionary<ItemsType, GameObject>();
-    public List<ItemsType> savedItems = new List<ItemsType>();
+    private Dictionary<string, GameObject> collection = new Dictionary<string, GameObject>();
+    public List<GameObject> savedItems = new List<GameObject>();
 
 
     public void InitItems()
@@ -27,34 +27,34 @@ public class Inventory : ScriptableObject
         collection.Clear();
         savedItems.Clear();
 
-        foreach(var item in Items)
-        {
-            if(collection.ContainsKey(item.Description) == false)
-            collection.Add(item.Description, item.Prefab);
-        }
+        //foreach(var item in Items)
+        //{
+        //    if(collection.ContainsKey(item.Description) == false)
+        //    collection.Add(item.Prefab);
+        //}
     }
 
-    public void SaveItem(ItemsType type)
+    public void SaveItem(GameObject item)
     {
         if(savedItems.Count < 3)
-        savedItems.Add(type);
+        savedItems.Add(item);
     }
 
 
-    public void GiveBack()
-    {
-        Debug.Log("Restore");
-        ItemsType current;
-        if (savedItems.Count > 0)
-        {
-            int last = savedItems.Count - 1;
-            current = savedItems[last];
-            Instantiate(collection[current], Vector3.zero, Quaternion.identity);
-            savedItems.Remove(current);
+    //public void GiveBack()
+    //{
+    //    Debug.Log("Restore");
+    //    ItemsType current;
+    //    if (savedItems.Count > 0)
+    //    {
+    //        int last = savedItems.Count - 1;
+    //        current = savedItems[last];
+    //        Instantiate(collection[current], Vector3.zero, Quaternion.identity);
+    //        savedItems.Remove(current);
 
-        }
+    //    }
       
-    }
+    //}
 
 
 

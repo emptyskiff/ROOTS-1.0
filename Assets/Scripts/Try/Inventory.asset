@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d57088a39602844bff969b23cd6c09, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  Items: []
+  Items:
+  - Prefab: {fileID: 0}
+    Description: 0
+  - Prefab: {fileID: 0}
+    Description: 1
+  - Prefab: {fileID: 0}
+    Description: 2
   savedItems: 000000000200000001000000
