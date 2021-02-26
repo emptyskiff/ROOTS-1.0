@@ -30,7 +30,16 @@ public class Switch : Interactable
     {
         isOn = !isOn;
         UpdateLight();
-        Debug.Log(player.name);
 
+    }
+
+    public override void Highlight(Material m)
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void Deselect()
+    {
+       // throw new System.NotImplementedException();
     }
 }

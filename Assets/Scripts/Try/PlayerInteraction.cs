@@ -6,34 +6,62 @@ public class PlayerInteraction : MonoBehaviour
 {
     public float interactionDistance;
     public TMPro.TextMeshProUGUI interactionText;
+    public Material highlightMaterial;
     public Camera camera;
-    
-    //void Start()
-    //{
-    //    camera = GetComponent<Camera>();
-    //}
 
-    
+    private GameObject player;
+
+    private Interactable current_inreractable, previous_interactable;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+
     void Update()
     {
         Ray ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
         RaycastHit hit;
 
         bool successfullHit = false;
+        bool onHit = Physics.Raycast(ray, out hit, interactionDistance);
 
-        if (Physics.Raycast(ray, out hit, interactionDistance)) { 
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
-
-            if (interactable !=null)
+        if (onHit)
+        {
+            if (hit.collider.TryGetComponent(out Interactable interactable))
             {
-                HandleInteraction(interactable, GameObject.FindGameObjectWithTag("Player"));
+
+                previous_interactable = current_inreractable;
+                current_inreractable = interactable;
+
+                HandleInteraction(interactable, player);
                 interactionText.text = interactable.GetDescription();
+
+                if (interactable.interactionType == Interactable.InteractionType.Inventory)
+                {
+                    interactable.Highlight(highlightMaterial);
+                }
                 successfullHit = true;
+
             }
         }
 
+        else if(current_inreractable != null)
+        {
+            current_inreractable.Deselect();
+            current_inreractable = null;
+        }
+
+        if(onHit && previous_interactable != null && previous_interactable != current_inreractable)
+        {
+            previous_interactable.Deselect();
+            previous_interactable = null;
+        }
+
+
         if (!successfullHit) interactionText.text = "";
-    }
+        }
 
 
     void HandleInteraction(Interactable interactable, GameObject player)
@@ -43,6 +71,7 @@ public class PlayerInteraction : MonoBehaviour
             case Interactable.InteractionType.Click:
                 if (Input.GetMouseButtonDown(0))
                 {
+                    interactable.player = player;
                     interactable.Interact();
                 }
                 break;
@@ -50,6 +79,7 @@ public class PlayerInteraction : MonoBehaviour
             case Interactable.InteractionType.Hold:
                 if(Input.GetMouseButtonDown(0))
                 {
+                    interactable.player = player;
                     interactable.Interact();
                 }
                 break;

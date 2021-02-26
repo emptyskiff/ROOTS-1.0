@@ -1,31 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
 
-public class RaySelectable : MonoBehaviour
-{
-
-    public ItemsType Description;
-
-    private Renderer look;
-    private Material original;
+//public class RaySelectable : MonoBehaviour
+//{
 
 
-    void Start()
-    {
-        look = GetComponent<Renderer>();
-        original = look.material;
-    }
+//    private Renderer look;
+//    private Material original;
 
-    public void Highlight(Material highlightMaterial)
-    {
-        look.material = highlightMaterial;
 
-    }
+//    void Start()
+//    {
+//        look = GetComponent<Renderer>();
+//        original = look.material;
+//    }
 
-    public void Deselect()
-    {
-        look.material = original;
-    }
+//    public void Highlight(Material highlightMaterial)
+//    {
+//        look.material = highlightMaterial;
 
-}
+//    }
+
+//    public void Deselect()
+//    {
+//        look.material = original;
+//    }
+
+//}

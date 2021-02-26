@@ -24,8 +24,8 @@
 //    {
 //        sceneCamera = Camera.main;
 
-//        if(GameLaunchCounter < 1)
-//        data.InitItems();
+//        if (GameLaunchCounter < 1)
+//            data.InitItems();
 
 //        GameLaunchCounter++;
 
@@ -67,7 +67,7 @@
 
 
 //        // в том случае если хит продолжается, но объекты стоят вплотную 
-//        if(onHit && previous != null && previous != current)
+//        if (onHit && previous != null && previous != current)
 //        {
 //            Deselect(previous);
 //            previous = null;
@@ -90,14 +90,14 @@
 
 //    }
 
-//    private void Select(RaySelectable cube)
+//    private void select(rayselectable cube)
 //    {
-//        cube.Highlight(highlightMaterial);
+//        cube.highlight(highlightmaterial);
 //    }
 
-//    private void Deselect(RaySelectable cube)
+//    private void deselect(rayselectable cube)
 //    {
-//        cube.Deselect();
+//        cube.deselect();
 //    }
 
 //}
