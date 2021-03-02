@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DrawerOpenClode.cs" />
     <Compile Include="Assets\PostProcessingTextureOverlay\SampleScene\SampleAssets\SCController.cs" />
     <Compile Include="Assets\PostProcessingTextureOverlay\Scripts\ColorEffect.cs" />
     <Compile Include="Assets\PostProcessingTextureOverlay\Scripts\HardLight.cs" />
