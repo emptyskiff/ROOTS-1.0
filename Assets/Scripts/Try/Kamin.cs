@@ -16,10 +16,10 @@ public class Kamin : Interactable
         player.GetComponent<InventorySyst>().data.GiveBack(point.transform.position, point.transform.rotation);
     }
     
-    public override string GetDescription()
-    {
-        return "Click to add to fireplace";
-    }
+    //public override string GetDescription()
+    //{
+    //    return "Click to add to fireplace";
+    //}
 
     public override void Interact()
     {

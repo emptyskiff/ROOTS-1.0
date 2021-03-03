@@ -55,11 +55,11 @@ public class DrawerOpenClose : Interactable
     }
 
 
-    public override string GetDescription()
-    {
-        if (!drawerOpen) return "Open drawe";
-        return "Close drawer";
-    }
+    //public override string GetDescription()
+    //{
+    //    if (!drawerOpen) return "Open drawe";
+    //    return "Close drawer";
+    //}
 
     public override void Interact()
     {

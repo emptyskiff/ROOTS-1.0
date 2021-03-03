@@ -20,11 +20,11 @@ public class Switch : Interactable
     }
 
 
-    public override string GetDescription()
-    {
-        if (isOn) return "Press to turn <color=red> off </color> the light";
-        return "Press to turn <color=green> on </color> the light";
-    }
+    //public override string GetDescription()
+    //{
+    //    if (isOn) return "Press to turn <color=red> off </color> the light";
+    //    return "Press to turn <color=green> on </color> the light";
+    //}
 
     public override void Interact()
     {

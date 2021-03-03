@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class InventoryObj : Interactable
 {
     private Renderer look;
@@ -19,18 +20,26 @@ public class InventoryObj : Interactable
     void AddToInventory()
     {
         player.GetComponent<InventorySyst>().data.SaveItem(gameObject); 
-        Destroy(gameObject);
     }
 
-
-    public override string GetDescription()
+    void ShowObject()
     {
-        return "Click to add to inventory";
+        player.GetComponent<InventorySyst>().volume.gameObject.SetActive(true);
+        GameObject.Find("Main Camera").GetComponent<MouseLook>().enabled = false;
+        GameObject.Find("First Person Player").GetComponent<PlayerMovement>().enabled = false;
     }
+
+
+    //public override string GetDescription()
+    //{
+    //    return " ";
+    //}
 
     public override void Interact()
     {
+        ShowObject();
         AddToInventory();
+        Destroy(gameObject);
 
     }
 

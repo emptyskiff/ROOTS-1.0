@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public float interactionDistance;
-    public TMPro.TextMeshProUGUI interactionText;
+    //public TMPro.TextMeshProUGUI interactionText;
     public Material highlightMaterial;
     public Camera camera;
 
@@ -36,7 +36,7 @@ public class PlayerInteraction : MonoBehaviour
                 current_inreractable = interactable;
 
                 HandleInteraction(interactable, player);
-                interactionText.text = interactable.GetDescription();
+                //interactionText.text = interactable.GetDescription();
 
                 if (interactable.interactionType == Interactable.InteractionType.Inventory)
                 {
@@ -47,21 +47,20 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        else if(current_inreractable != null)
+        else if (current_inreractable != null)
         {
             current_inreractable.Deselect();
             current_inreractable = null;
         }
 
-        if(onHit && previous_interactable != null && previous_interactable != current_inreractable)
+        if (onHit && previous_interactable != null && previous_interactable != current_inreractable)
         {
             previous_interactable.Deselect();
             previous_interactable = null;
-        }
 
-
-        if (!successfullHit) interactionText.text = "";
+            //if (!successfullHit) interactionText.text = " ";
         }
+    }
 
 
     void HandleInteraction(Interactable interactable, GameObject player)

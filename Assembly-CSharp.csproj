@@ -64,13 +64,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DrawerOpenClode.cs" />
     <Compile Include="Assets\PostProcessingTextureOverlay\SampleScene\SampleAssets\SCController.cs" />
     <Compile Include="Assets\PostProcessingTextureOverlay\Scripts\ColorEffect.cs" />
     <Compile Include="Assets\PostProcessingTextureOverlay\Scripts\HardLight.cs" />
     <Compile Include="Assets\PostProcessingTextureOverlay\Scripts\TextureOverlay.cs" />
     <Compile Include="Assets\Scripts\DoorInteraction\BasicDoorController.cs" />
     <Compile Include="Assets\Scripts\DoorInteraction\BasicDoorRaycast.cs" />
+    <Compile Include="Assets\Scripts\DrawerOpenClode.cs" />
     <Compile Include="Assets\Scripts\ExamineItem.cs" />
     <Compile Include="Assets\Scripts\LightSwitch\LightSwitch.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
@@ -85,9 +85,9 @@
     <Compile Include="Assets\Scripts\Try\RaySelectable.cs" />
     <Compile Include="Assets\Scripts\Try\RaycastExample.cs" />
     <Compile Include="Assets\Scripts\Try\Switch.cs" />
+    <Compile Include="Assets\Scripts\Turn.cs" />
     <Compile Include="Assets\Scripts\Xtra\Blur.cs" />
     <Compile Include="Assets\Scripts\Xtra\BreathAnim.cs" />
-    <Compile Include="Assets\Turn.cs" />
     <None Include="Assets\PostProcessingTextureOverlay\Scripts\Resources\ColorEffect.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

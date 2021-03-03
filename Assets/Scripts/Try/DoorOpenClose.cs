@@ -55,11 +55,11 @@ public class DoorOpenClose : Interactable
     }
 
 
-    public override string GetDescription()
-    {
-        if (!doorOpen) return "Press to open the door";
-        return "Press to close the door";
-    }
+    //public override string GetDescription()
+    //{
+    //    if (!doorOpen) return "Press to open the door";
+    //    return "Press to close the door";
+    //}
 
     public override void Interact()
     {
