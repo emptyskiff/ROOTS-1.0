@@ -25,41 +25,43 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit hit;
 
         bool successfullHit = false;
-        bool onHit = Physics.Raycast(ray, out hit, interactionDistance);
+        bool onHit = Physics.Raycast(ray, out hit);
 
-        if (onHit)
+        if (onHit && hit.collider.TryGetComponent(out Interactable interactable))
         {
-            if (hit.collider.TryGetComponent(out Interactable interactable))
+
+            previous_interactable = current_inreractable;
+            current_inreractable = interactable;
+
+            HandleInteraction(interactable, player);
+            //interactionText.text = interactable.GetDescription();
+
+
+            if (interactable.interactionType == Interactable.InteractionType.Inventory && previous_interactable != current_inreractable)
             {
-
-                previous_interactable = current_inreractable;
-                current_inreractable = interactable;
-
-                HandleInteraction(interactable, player);
-                //interactionText.text = interactable.GetDescription();
-
-                if (interactable.interactionType == Interactable.InteractionType.Inventory)
-                {
-                    interactable.Highlight(highlightMaterial);
-                }
-                successfullHit = true;
-
+                interactable.Highlight(highlightMaterial);
             }
+
+
+            if (previous_interactable != null && previous_interactable != current_inreractable)
+            {
+                previous_interactable.Deselect();
+                previous_interactable = null;
+
+                //if (!successfullHit) interactionText.text = " ";
+            }
+            successfullHit = true;
+
+
         }
 
         else if (current_inreractable != null)
-        {
+        {  
             current_inreractable.Deselect();
             current_inreractable = null;
         }
 
-        if (onHit && previous_interactable != null && previous_interactable != current_inreractable)
-        {
-            previous_interactable.Deselect();
-            previous_interactable = null;
-
-            //if (!successfullHit) interactionText.text = " ";
-        }
+       
     }
 
 

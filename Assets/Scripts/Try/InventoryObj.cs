@@ -14,6 +14,7 @@ public class InventoryObj : Interactable
         interactionType = InteractionType.Inventory;
         look = GetComponent<Renderer>();
         original = look.material;
+        ObjectsDisplay = FindObjectOfType<UIObjectsDisplay>();
     }
 
 
@@ -25,8 +26,11 @@ public class InventoryObj : Interactable
     void ShowObject()
     {
         player.GetComponent<InventorySyst>().volume.gameObject.SetActive(true);
-        GameObject.Find("Main Camera").GetComponent<MouseLook>().enabled = false;
-        GameObject.Find("First Person Player").GetComponent<PlayerMovement>().enabled = false;
+        FindObjectOfType<MouseLook>().enabled = false;
+       // GameObject.Find("Main Camera").GetComponent<MouseLook>().enabled = false;
+        FindObjectOfType<PlayerMovement>().enabled = false;
+
+        ObjectsDisplay.Display(objectName);
     }
 
 
@@ -51,6 +55,7 @@ public class InventoryObj : Interactable
 
     public override void Deselect()
     {
+
         look.material = original;
     }
 

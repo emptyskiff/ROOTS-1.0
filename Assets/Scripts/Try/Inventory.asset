@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   Items:
-  - prefab: {fileID: -927199367670048503, guid: 7769153401d5dcd44a72172654b1f6da,
-      type: 3}
+  - prefab: {fileID: 919132149155446097, guid: 7769153401d5dcd44a72172654b1f6da, type: 3}
     name: Compass
-  - prefab: {fileID: -927199367670048503, guid: 51540465364795740bccd8576dbf9f59,
-      type: 3}
-    name: BearTrap
-  - prefab: {fileID: -927199367670048503, guid: 93c8c9771b8d11440ad9e2901621bd44,
-      type: 3}
-    name: Clippers
+  - prefab: {fileID: 919132149155446097, guid: dfb47f8c720f1924cbba4cda7aea9077, type: 3}
+    name: Leika
+  - prefab: {fileID: 919132149155446097, guid: 28487a4624a81f04f814dab99d6bf6f7, type: 3}
+    name: Kirka
+  - prefab: {fileID: 919132149155446097, guid: a45206a457f35b94c86c8f23b48d3d93, type: 3}
+    name: Knife
   inventorySize: 3
   savedItems: []
