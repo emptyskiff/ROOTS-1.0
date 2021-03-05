@@ -29,6 +29,7 @@ public class Turn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             if (onStart == false)
@@ -49,8 +50,7 @@ public class Turn : MonoBehaviour
             posLastFrame = Input.mousePosition;
 
             var axis = Quaternion.AngleAxis(-90f, Vector3.forward) * delta;
-        //transform.rotation = Quaternion.AngleAxis(delta.magnitude * 0.1f, axis) * transform.rotation;
-        transform.RotateAround(transform.position, transform.up, delta.magnitude * 0.001f * axis.y);
+            transform.RotateAround(transform.position, transform.up, delta.magnitude * 0.001f * axis.y);
 
 
         //}

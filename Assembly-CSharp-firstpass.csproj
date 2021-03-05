@@ -1035,6 +1035,9 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>F:/Unity Projects/ROOTS 1.0/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
