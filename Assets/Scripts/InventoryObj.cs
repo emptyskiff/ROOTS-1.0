@@ -8,8 +8,6 @@ public class InventoryObj : Interactable
 {
     public UnityEvent OnInteract;
 
-
-
     private Renderer look;
     private Material original;
     public string objectName;
@@ -25,6 +23,7 @@ public class InventoryObj : Interactable
 
     void AddToInventory()
     {
+        Debug.Log("Added to inventory");
         player.GetComponent<InventorySyst>().data.SaveItem(gameObject); 
     }
 
@@ -32,7 +31,7 @@ public class InventoryObj : Interactable
     {
         player.GetComponent<InventorySyst>().volume.gameObject.SetActive(true);
         FindObjectOfType<MouseLook>().enabled = false;
-       // GameObject.Find("Main Camera").GetComponent<MouseLook>().enabled = false;
+        Cursor.lockState = CursorLockMode.None;
         FindObjectOfType<PlayerMovement>().enabled = false;
 
         ObjectsDisplay.Display(gameObject);
@@ -47,8 +46,14 @@ public class InventoryObj : Interactable
     public override void Interact()
     {
         ShowObject();
+    }
+
+    public override void AlternateInteract()
+    {
+        Debug.Log("AlternateInteract works");
         AddToInventory();
-        //Destroy(gameObject);
+        OnInteract.Invoke();
+        Destroy(gameObject);
 
     }
 

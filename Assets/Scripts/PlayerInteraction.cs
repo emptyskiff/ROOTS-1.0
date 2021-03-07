@@ -43,13 +43,13 @@ public class PlayerInteraction : MonoBehaviour
             }
 
 
-            if (previous_interactable != null && previous_interactable != current_inreractable)
-            {
-                previous_interactable.Deselect();
-                previous_interactable = null;
+            //if (previous_interactable != null && previous_interactable != current_inreractable)
+            //{
+            //    previous_interactable.Deselect();
+            //    previous_interactable = null;
 
-                //if (!successfullHit) interactionText.text = " ";
-            }
+            //    //if (!successfullHit) interactionText.text = " ";
+            //}
             successfullHit = true;
 
 
@@ -91,12 +91,45 @@ public class PlayerInteraction : MonoBehaviour
                     interactable.player = player;
                     interactable.Interact();
                 }
+
                 break;
 
 
             default:
                 throw new System.Exception("Unsupported type of interactable");
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            switch (interactable.interactionType)
+            {
+                case Interactable.InteractionType.Click:
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        //interactable.player = player;
+                        //interactable.Interact();
+                    }
+                    break;
+
+                case Interactable.InteractionType.Hold:
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        //interactable.player = player;
+                        //interactable.Interact();
+                    }
+                    break;
+
+                case Interactable.InteractionType.Inventory:
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        interactable.player = player;
+                        interactable.AlternateInteract();
+                    }
+
+                    break;
+            }
+        } 
     }
 
 }
+    

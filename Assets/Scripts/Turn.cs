@@ -10,8 +10,6 @@ public class Turn : MonoBehaviour
     private bool onStart;
     private UIObjectsDisplay uIObjectsDisplay;
 
-
-
     private void Start()
     {
        
@@ -23,29 +21,22 @@ public class Turn : MonoBehaviour
         uIObjectsDisplay = GetComponentInParent<UIObjectsDisplay>();
         Cursor.visible = false;
 
-
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
-            if (onStart == false)
             {
-                posLastFrame = Input.mousePosition;
-                onStart = true;
-            }
-            else
-            {
-                gameObject.SetActive(false);
+                OnDisable();
             }
 
         }
 
-        //if (Input.GetMouseButton(0))
-       // {
+        if (Input.GetMouseButton(0))
+        {
             var delta = Input.mousePosition - posLastFrame;
             posLastFrame = Input.mousePosition;
 
@@ -53,11 +44,9 @@ public class Turn : MonoBehaviour
             transform.RotateAround(transform.position, transform.up, delta.magnitude * 0.001f * axis.y);
 
 
-        //}
-
+        }
 
     }
-
 
     private void OnDisable()
     {

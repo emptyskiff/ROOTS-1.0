@@ -15,6 +15,7 @@ public abstract class Interactable : MonoBehaviour
     public InteractionType interactionType;
     //public abstract string GetDescription();
     public abstract void Interact();
+    public virtual void AlternateInteract() {}
     public abstract void Highlight(Material m);
     public abstract void Deselect();
     public GameObject player;

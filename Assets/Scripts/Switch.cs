@@ -19,7 +19,6 @@ public class Switch : Interactable
         m_Light.enabled = isOn;
     }
 
-
     //public override string GetDescription()
     //{
     //    if (isOn) return "Press to turn <color=red> off </color> the light";

@@ -37,13 +37,12 @@ public class UIObjectsDisplay : MonoBehaviour
 
     public void QuitDisplayMode()
     {
-        if (currentObject != null)
-        {
-            Debug.Log("aa");
-            currentObject.GetComponent<InventoryObj>().OnInteract.Invoke();
-            Destroy(currentObject);
+        //if (currentObject != null)
+        //{
+        //    currentObject.GetComponent<InventoryObj>().OnInteract.Invoke();
+        //    Destroy(currentObject);
 
-        }
+        //}
         
         UIPostProcessing.SetActive(false);
         mouseLook.enabled = true;
