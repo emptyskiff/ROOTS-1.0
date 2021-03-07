@@ -840,6 +840,14 @@
       <Project>{F65B1D95-C975-0743-AD28-B8C5BE086D8E}</Project>
       <Name>GameCreator.Update</Name>
     </ProjectReference>
+    <ProjectReference Include="LeanCommon.csproj">
+      <Project>{FA556D1D-AA38-E225-E108-80C907A1448A}</Project>
+      <Name>LeanCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanTransition.csproj">
+      <Project>{F5C70C1A-5C9B-30F0-4F53-1CF8215BBF12}</Project>
+      <Name>LeanTransition</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
