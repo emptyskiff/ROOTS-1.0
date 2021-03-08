@@ -32,6 +32,7 @@ public class UIObjectsDisplay : MonoBehaviour
         if (items.ContainsKey(name))
         {
             items[name].SetActive(true);
+            //
         }
     }
 
@@ -47,6 +48,11 @@ public class UIObjectsDisplay : MonoBehaviour
         UIPostProcessing.SetActive(false);
         mouseLook.enabled = true;
         playerMovement.enabled = true;
+        if (currentObject != null)
+        {
+            currentObject.GetComponent<InventoryObj>().StopShowing();
+        }
+
     }
 
 }

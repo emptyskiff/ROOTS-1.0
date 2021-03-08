@@ -13,6 +13,8 @@ public class CameraRect : MonoBehaviour
 
     public bool changeAspect;
 
+    AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,9 @@ public class CameraRect : MonoBehaviour
         desiredWidth = 1 / cam.aspect;
         desiredX = (1 - desiredWidth) / 2;
         changeAspect = false;
+
+        //
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,5 +42,9 @@ public class CameraRect : MonoBehaviour
     {
         changeAspect = true;
         GetComponentInChildren<Animator>().Play("RectChange");
+
+        //
+        source.Play();
+
     }
 }

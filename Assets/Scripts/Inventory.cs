@@ -45,15 +45,17 @@ public class Inventory : ScriptableObject
 
     public void GiveBack(Vector3 transform, Quaternion rotation)
     {
-        Debug.Log("Restore");
+        //Debug.Log("Restore");
         string currentName;
         if (savedItems.Count > 0)
         {
             int last = savedItems.Count - 1;
             currentName = savedItems[last];
             var placed = Instantiate(collection[currentName], transform, rotation);
+
             if (placed.GetComponent<InventoryObj>() != null)
             {
+                placed.GetComponent<InventoryObj>().audioPlayer.PlaySound(placed.GetComponent<InventoryObj>().objectName, placed.GetComponent<InventoryObj>().lowVolume, placed.GetComponent<InventoryObj>().fullVolume);
                 Destroy(placed.GetComponent<InventoryObj>());
             }
             savedItems.Remove(currentName);

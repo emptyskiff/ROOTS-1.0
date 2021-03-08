@@ -11,6 +11,10 @@ public class InventoryObj : Interactable
     private Renderer look;
     private Material original;
     public string objectName;
+    bool isObjectInspecting = false;
+    public AudioPlayer audioPlayer;
+    public float lowVolume;
+    public float fullVolume;
 
     void Start()
     {
@@ -18,13 +22,16 @@ public class InventoryObj : Interactable
         look = GetComponent<Renderer>();
         original = look.material;
         ObjectsDisplay = FindObjectOfType<UIObjectsDisplay>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
 
     void AddToInventory()
     {
-        Debug.Log("Added to inventory");
-        player.GetComponent<InventorySyst>().data.SaveItem(gameObject); 
+
+            Debug.Log("Added to inventory");
+            player.GetComponent<InventorySyst>().data.SaveItem(gameObject);
+            audioPlayer.PlaySound(objectName, 0, lowVolume);
     }
 
     void ShowObject()
@@ -33,8 +40,17 @@ public class InventoryObj : Interactable
         FindObjectOfType<MouseLook>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
         FindObjectOfType<PlayerMovement>().enabled = false;
+        isObjectInspecting = true;
+
+        audioPlayer.PlaySound(objectName, 0, fullVolume);
 
         ObjectsDisplay.Display(gameObject);
+    }
+
+    public void StopShowing()
+    {
+        isObjectInspecting = false;
+        audioPlayer.StopSound(objectName);
     }
 
 
@@ -45,15 +61,22 @@ public class InventoryObj : Interactable
 
     public override void Interact()
     {
-        ShowObject();
+        if(isObjectInspecting == false)
+        {
+            ShowObject();
+        }
+
     }
 
     public override void AlternateInteract()
     {
-        Debug.Log("AlternateInteract works");
-        AddToInventory();
-        OnInteract.Invoke();
-        Destroy(gameObject);
+        if (isObjectInspecting == false)
+        {
+            Debug.Log("AlternateInteract works");
+            AddToInventory();
+            OnInteract.Invoke();
+            Destroy(gameObject);
+        }
 
     }
 
