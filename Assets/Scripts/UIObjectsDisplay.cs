@@ -32,26 +32,32 @@ public class UIObjectsDisplay : MonoBehaviour
         if (items.ContainsKey(name))
         {
             items[name].SetActive(true);
-            //
         }
+
     }
 
     public void QuitDisplayMode()
     {
-        //if (currentObject != null)
-        //{
-        //    currentObject.GetComponent<InventoryObj>().OnInteract.Invoke();
-        //    Destroy(currentObject);
 
-        //}
-        
         UIPostProcessing.SetActive(false);
         mouseLook.enabled = true;
         playerMovement.enabled = true;
         if (currentObject != null)
         {
             currentObject.GetComponent<InventoryObj>().StopShowing();
+            Debug.Log("Stopped showing");
+            string name = currentObject.GetComponent<InventoryObj>().objectName;
+            if (items.ContainsKey(name))
+            {
+                items[name].SetActive(false);
+            Debug.Log("Item non-active");
+            }
+
+
+
         }
+
+        
 
     }
 

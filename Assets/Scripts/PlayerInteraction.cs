@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public float interactionDistance;
-    //public TMPro.TextMeshProUGUI interactionText;
     public Material highlightMaterial;
     public Camera camera;
 
@@ -39,7 +38,7 @@ public class PlayerInteraction : MonoBehaviour
 
             if (interactable.interactionType == Interactable.InteractionType.Inventory && previous_interactable != current_inreractable)
             {
-                interactable.Highlight(highlightMaterial);
+                //interactable.Highlight(highlightMaterial);
             }
 
 

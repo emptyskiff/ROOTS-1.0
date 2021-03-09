@@ -11,7 +11,7 @@ public class InventoryObj : Interactable
     private Renderer look;
     private Material original;
     public string objectName;
-    bool isObjectInspecting = false;
+    private bool isObjectInspecting = false;
     public AudioPlayer audioPlayer;
     public float lowVolume;
     public float fullVolume;
@@ -28,7 +28,6 @@ public class InventoryObj : Interactable
 
     void AddToInventory()
     {
-
             Debug.Log("Added to inventory");
             player.GetComponent<InventorySyst>().data.SaveItem(gameObject);
             audioPlayer.PlaySound(objectName, 0, lowVolume);
@@ -39,6 +38,7 @@ public class InventoryObj : Interactable
         player.GetComponent<InventorySyst>().volume.gameObject.SetActive(true);
         FindObjectOfType<MouseLook>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
         FindObjectOfType<PlayerMovement>().enabled = false;
         isObjectInspecting = true;
 
@@ -49,15 +49,11 @@ public class InventoryObj : Interactable
 
     public void StopShowing()
     {
-        isObjectInspecting = false;
+       
         audioPlayer.StopSound(objectName);
+        isObjectInspecting = false;
     }
 
-
-    //public override string GetDescription()
-    //{
-    //    return " ";
-    //}
 
     public override void Interact()
     {
@@ -72,9 +68,9 @@ public class InventoryObj : Interactable
     {
         if (isObjectInspecting == false)
         {
-            Debug.Log("AlternateInteract works");
+            //Debug.Log("AlternateInteract works");
             AddToInventory();
-            OnInteract.Invoke();
+            OnInteract.Invoke(); //эвент
             Destroy(gameObject);
         }
 

@@ -817,6 +817,10 @@
       <Project>{0FA07A50-464B-DB6F-1CDB-7FECA53B2F14}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="GameCreator.Update.csproj">
+      <Project>{D5B1ED10-98BC-516A-CAD8-0FE2F16E4CA6}</Project>
+      <Name>GameCreator.Update</Name>
+    </ProjectReference>
     <ProjectReference Include="LeanCommon.csproj">
       <Project>{E5BA7429-B131-FC37-36EA-469F541C5DBE}</Project>
       <Name>LeanCommon</Name>
@@ -824,10 +828,6 @@
     <ProjectReference Include="LeanTransition.csproj">
       <Project>{A9DC43C3-EFDA-E030-DFD0-9F9D5B5CAD10}</Project>
       <Name>LeanTransition</Name>
-    </ProjectReference>
-    <ProjectReference Include="GameCreator.Update.csproj">
-      <Project>{D5B1ED10-98BC-516A-CAD8-0FE2F16E4CA6}</Project>
-      <Name>GameCreator.Update</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

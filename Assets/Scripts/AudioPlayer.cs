@@ -43,12 +43,14 @@ public class AudioPlayer : MonoBehaviour
         AudioSource currentSound = collection[givenName];
         currentSound.Play();
         StartCoroutine(FadeIn(currentSound, 1, targetVolume, startVolume));
+        Debug.Log("Play");
     }
     
     public void StopSound (string givenName)
     {
         AudioSource currentSound = collection[givenName];
         StartCoroutine(FadeOut(currentSound, 1));
+        Debug.Log("Stop");
     }
 
 
