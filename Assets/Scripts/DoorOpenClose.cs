@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorOpenClose : Interactable
 {
@@ -16,6 +17,9 @@ public class DoorOpenClose : Interactable
     [SerializeField] private bool pauseInteraction = false;
 
 
+    public Image openDoor;
+    public Image closeDoor;
+
     void Start()
     {
         interactionType = InteractionType.Click;
@@ -26,7 +30,18 @@ public class DoorOpenClose : Interactable
         doorAnim = gameObject.GetComponent<Animator>();
     }
 
-    public override void Highlight(Material highlightMaterial) { }
+    public override void Highlight(Material highlightMaterial)
+    {
+        if (!doorOpen && !pauseInteraction)
+        {
+            openDoor.enabled = true;
+        }
+        else
+        {
+            closeDoor.enabled = true;
+        }
+    }
+
     public override void Deselect() { }
 
     private IEnumerator PauseDoorInteraction()
@@ -40,7 +55,6 @@ public class DoorOpenClose : Interactable
     {
         if (!doorOpen && !pauseInteraction)
         {
-
             doorAnim.Play(openAnimation);
             doorOpen = true;
             StartCoroutine(PauseDoorInteraction());

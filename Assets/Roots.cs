@@ -12,7 +12,6 @@ public class Roots : MonoBehaviour
     [SerializeField] private float fadeSpeed;
     private Image display;
 
-
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -27,7 +26,7 @@ public class Roots : MonoBehaviour
         Color imageColor = display.color;
 
         float x = transform.position.x;
-        float a = 0.5f;
+        float a = 0.0f;
 
         while(timeInSeconds > 0)
         {
@@ -42,6 +41,13 @@ public class Roots : MonoBehaviour
             yield return null;
 
         }
+
+        display.GetComponent<Image>();
+        var tempcolor = display.color;
+        tempcolor.a = 0;
+        display.color = tempcolor;
+
+
 
     }
 }

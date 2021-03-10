@@ -518,16 +518,16 @@
     <Compile Include="Assets\Scripts\Try\RaySelectable.cs" />
     <Compile Include="Assets\Scripts\Turn.cs" />
     <Compile Include="Assets\Scripts\UIObjectsDisplay.cs" />
-    <Compile Include="Assets\Scripts\UIOn.cs" />
     <Compile Include="Assets\Scripts\Xtra\Blur.cs" />
     <Compile Include="Assets\Scripts\Xtra\BreathAnim.cs" />
     <Compile Include="Assets\Tree.cs" />
-    <Compile Include="Assets\UI\UI.cs" />
+    <Compile Include="Assets\_Materials\UI\UI.cs" />
     <None Include="Assets\Lean\Plugins\GameCreator\Extra\Shaders\ScreenSpaceUI.shader" />
     <None Include="Assets\PostProcessingTextureOverlay\Scripts\Resources\ColorEffect.shader" />
     <None Include="Assets\Lean\Plugins\VolumetricLightBeam\Shaders\ShaderSpecificBuiltin.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Hovl Studio\Procedural fire\Shaders\FireSphere.shader" />
     <None Include="Assets\Lean\Plugins\VolumetricLightBeam\Readme.txt" />
     <None Include="Assets\Lean\Plugins\VolumetricLightBeam\Shaders\shadergen_includes_builtin.txt" />
     <None Include="Assets\Lean\Plugins\VolumetricLightBeam\Shaders\ShaderSpecificURP.cginc" />
@@ -545,6 +545,7 @@
     <None Include="Assets\Lean\Plugins\VolumetricLightBeam\Shaders\ShaderSpecificHDRP.hlsl" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\Hovl Studio\Procedural fire\Demo scene\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Lean\Plugins\VolumetricLightBeam\Shaders\shadergen_includes_urp.txt" />

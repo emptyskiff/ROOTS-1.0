@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -12,9 +13,18 @@ public class PlayerInteraction : MonoBehaviour
 
     private Interactable current_inreractable, previous_interactable;
 
+
+    //UI
+    public Image openDoor;
+    public Image closeDoor;
+    public Image mouseInteract;
+
+
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
 
@@ -34,21 +44,23 @@ public class PlayerInteraction : MonoBehaviour
 
             HandleInteraction(interactable, player);
             //interactionText.text = interactable.GetDescription();
-
+            
 
             if (interactable.interactionType == Interactable.InteractionType.Inventory && previous_interactable != current_inreractable)
             {
                 //interactable.Highlight(highlightMaterial);
+                mouseInteract.enabled = true;
             }
 
 
-            //if (previous_interactable != null && previous_interactable != current_inreractable)
-            //{
-            //    previous_interactable.Deselect();
-            //    previous_interactable = null;
+            if (previous_interactable != null && previous_interactable != current_inreractable)
+            {
+                //previous_interactable.Deselect();
+                //previous_interactable = null;
+                if (successfullHit) mouseInteract.enabled = false;
 
-            //    //if (!successfullHit) interactionText.text = " ";
-            //}
+                //if (!successfullHit) interactionText.text = " ";
+            }
             successfullHit = true;
 
 
