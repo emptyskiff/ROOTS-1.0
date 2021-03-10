@@ -10,21 +10,11 @@ public class PlayerInteraction : MonoBehaviour
     public Camera camera;
 
     private GameObject player;
-
     private Interactable current_inreractable, previous_interactable;
-
-
-    //UI
-    public Image openDoor;
-    public Image closeDoor;
-    public Image mouseInteract;
-
-
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
     }
 
 
@@ -44,103 +34,88 @@ public class PlayerInteraction : MonoBehaviour
 
             HandleInteraction(interactable, player);
             //interactionText.text = interactable.GetDescription();
-            
 
-            if (interactable.interactionType == Interactable.InteractionType.Inventory && previous_interactable != current_inreractable)
+
+            if (previous_interactable != current_inreractable)
             {
-                //interactable.Highlight(highlightMaterial);
-                mouseInteract.enabled = true;
+                interactable.Highlight();
+
+                if (previous_interactable != null && previous_interactable != current_inreractable)
+                {
+                    previous_interactable.Deselect();
+                    previous_interactable = null;
+                    // if (!successfullHit) interactionText.text = " ";
+                }
+                successfullHit = true;
             }
-
-
-            if (previous_interactable != null && previous_interactable != current_inreractable)
-            {
-                //previous_interactable.Deselect();
-                //previous_interactable = null;
-                if (successfullHit) mouseInteract.enabled = false;
-
-                //if (!successfullHit) interactionText.text = " ";
-            }
-            successfullHit = true;
-
-
         }
 
         else if (current_inreractable != null)
-        {  
+        {
             current_inreractable.Deselect();
             current_inreractable = null;
         }
-
-       
     }
 
-
     void HandleInteraction(Interactable interactable, GameObject player)
-    {   Input.GetMouseButtonDown(0);
-        switch (interactable.interactionType)
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            case Interactable.InteractionType.Click:
-                if (Input.GetMouseButtonDown(0))
-                {
-                    interactable.player = player;
-                    interactable.Interact();
-                }
-                break;
+            switch (interactable.interactionType)
+            {
+                case Interactable.InteractionType.Click:
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        interactable.player = player;
+                        interactable.Interact();
+                    }
+                    break;
 
-            case Interactable.InteractionType.Hold:
-                if(Input.GetMouseButtonDown(0))
-                {
-                    interactable.player = player;
-                    interactable.Interact();
-                }
-                break;
+                case Interactable.InteractionType.Inventory:
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        interactable.player = player;
+                        interactable.Interact();
+                    }
 
-            case Interactable.InteractionType.Inventory:
-                if(Input.GetMouseButtonDown(0))
-                {
-                    interactable.player = player;
-                    interactable.Interact();
-                }
-
-                break;
+                    break;
 
 
-            default:
-                throw new System.Exception("Unsupported type of interactable");
+                default:
+                    throw new System.Exception("Unsupported type of interactable");
+            }
         }
 
         if (Input.GetMouseButtonDown(1))
         {
             switch (interactable.interactionType)
             {
-                case Interactable.InteractionType.Click:
-                    if (Input.GetMouseButtonDown(1))
-                    {
-                        //interactable.player = player;
-                        //interactable.Interact();
-                    }
-                    break;
+                    case Interactable.InteractionType.Click:
+                        if (Input.GetMouseButtonDown(1))
+                        {
+                            //interactable.player = player;
+                            //interactable.Interact();
+                        }
+                        break;
 
-                case Interactable.InteractionType.Hold:
-                    if (Input.GetMouseButtonDown(1))
-                    {
-                        //interactable.player = player;
-                        //interactable.Interact();
-                    }
-                    break;
+                    case Interactable.InteractionType.Hold:
+                        if (Input.GetMouseButtonDown(1))
+                        {
+                            //interactable.player = player;
+                            //interactable.Interact();
+                        }
+                        break;
 
-                case Interactable.InteractionType.Inventory:
-                    if (Input.GetMouseButtonDown(1))
-                    {
-                        interactable.player = player;
-                        interactable.AlternateInteract();
-                    }
+                    case Interactable.InteractionType.Inventory:
+                        if (Input.GetMouseButtonDown(1))
+                        {
+                            interactable.player = player;
+                            interactable.AlternateInteract();
+                        }
 
-                    break;
+                        break;
             }
-        } 
+        }
     }
 
-}
-    
+    }

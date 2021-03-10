@@ -30,19 +30,37 @@ public class DoorOpenClose : Interactable
         doorAnim = gameObject.GetComponent<Animator>();
     }
 
-    public override void Highlight(Material highlightMaterial)
+    public override void Highlight()
     {
-        if (!doorOpen && !pauseInteraction)
+        Debug.Log("highlight");
+        if (doorOpen)
         {
-            openDoor.enabled = true;
+            Debug.Log("highlight open door");
+            closeDoor.enabled = true;
         }
         else
         {
-            closeDoor.enabled = true;
+            Debug.Log("highlight closed door");
+            openDoor.enabled = true;
         }
     }
 
-    public override void Deselect() { }
+    public override void Deselect() 
+    {
+        Debug.Log("deselect");
+        closeDoor.enabled = false;
+        if (!doorOpen)
+        {
+            Debug.Log("deselect open door");
+            openDoor.enabled = false;
+        }
+
+        else
+        {
+            Debug.Log("deselect closed door");
+            openDoor.enabled = false;
+        }
+    }
 
     private IEnumerator PauseDoorInteraction()
     {
@@ -54,7 +72,7 @@ public class DoorOpenClose : Interactable
     void OpenDoor()
     {
         if (!doorOpen && !pauseInteraction)
-        {
+        {  
             doorAnim.Play(openAnimation);
             doorOpen = true;
             StartCoroutine(PauseDoorInteraction());
@@ -62,6 +80,9 @@ public class DoorOpenClose : Interactable
 
         else
         {
+            //
+            //closeDoor.enabled = true;
+            //
             doorAnim.Play(closeAnimation);
             doorOpen = false;
             StartCoroutine(PauseDoorInteraction());

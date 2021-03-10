@@ -588,6 +588,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &95834931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95834932}
+  - component: {fileID: 95834934}
+  - component: {fileID: 95834933}
+  m_Layer: 11
+  m_Name: Fire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &95834932
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95834931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5247, y: 0.5247, z: 0.5247}
+  m_Children: []
+  m_Father: {fileID: 1199368849}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 100.2, y: -80}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &95834933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95834931}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7ef422fb06ca2ee4597fc407ee1a6802, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &95834934
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95834931}
+  m_CullTransparentMesh: 0
 --- !u!4 &128840462 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 878bd9dc25c876746a983e349bfb7b6a,
@@ -1683,12 +1757,13 @@ MonoBehaviour:
   ObjectsDisplay: {fileID: 0}
   interactionType: 0
   player: {fileID: 2087110231}
+  interactionImage: {fileID: 0}
   openAnimation: DoorOpen
   closeAnimation: DoorClose
   waitTimer: 1
   pauseInteraction: 0
-  openDoor: {fileID: 0}
-  closeDoor: {fileID: 0}
+  openDoor: {fileID: 261612863}
+  closeDoor: {fileID: 1694106397}
 --- !u!95 &319629637
 Animator:
   serializedVersion: 3
@@ -4264,6 +4339,77 @@ Transform:
   m_Father: {fileID: 1336012614}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+--- !u!1 &671099612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 671099613}
+  - component: {fileID: 671099615}
+  - component: {fileID: 671099614}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &671099613
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671099612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1191043723}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20.761, y: 0.000015259}
+  m_SizeDelta: {x: 3309.9766, y: 1712.4705}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &671099614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671099612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: d7bf644b69e53b140aa6155ee0063a68, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &671099615
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671099612}
+  m_CullTransparentMesh: 0
 --- !u!4 &675542241 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d9ddc80671d9ff438085c30116de970,
@@ -5509,8 +5655,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8726415, g: 1, b: 1, a: 1}
-  m_Intensity: 0.59
-  m_Range: 3
+  m_Intensity: 4
+  m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5996,6 +6142,7 @@ MonoBehaviour:
   ObjectsDisplay: {fileID: 0}
   interactionType: 0
   player: {fileID: 0}
+  interactionImage: {fileID: 0}
   m_Light: {fileID: 979626532}
   isOn: 1
 --- !u!4 &928797968
@@ -6035,6 +6182,7 @@ MonoBehaviour:
   ObjectsDisplay: {fileID: 1838046639}
   interactionType: 2
   player: {fileID: 0}
+  interactionImage: {fileID: 1809581038}
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -7530,7 +7678,7 @@ Camera:
   m_GameObject: {fileID: 1189599912}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -7549,7 +7697,7 @@ Camera:
   field of view: 27
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 32
@@ -7669,6 +7817,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1465997889}
+  - {fileID: 671099613}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8020,6 +8169,7 @@ RectTransform:
   - {fileID: 1809581037}
   - {fileID: 1744281890}
   - {fileID: 2043977097}
+  - {fileID: 95834932}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9145,12 +9295,13 @@ MonoBehaviour:
   ObjectsDisplay: {fileID: 0}
   interactionType: 0
   player: {fileID: 2087110231}
+  interactionImage: {fileID: 0}
   openAnimation: DoorOpen
   closeAnimation: DoorClose
   waitTimer: 1
   pauseInteraction: 0
-  openDoor: {fileID: 0}
-  closeDoor: {fileID: 0}
+  openDoor: {fileID: 261612863}
+  closeDoor: {fileID: 1694106397}
 --- !u!95 &1490484672
 Animator:
   serializedVersion: 3
@@ -10316,14 +10467,14 @@ RectTransform:
   m_GameObject: {fileID: 1694106395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99853396, y: 1.1083, z: 1.1083}
   m_Children: []
   m_Father: {fileID: 1199368849}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -80}
+  m_AnchoredPosition: {x: 100, y: -79.9}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1694106397
@@ -10867,7 +11018,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744281889}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -11750,7 +11901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -80}
+  m_AnchoredPosition: {x: 95.62, y: -78.8}
   m_SizeDelta: {x: 320, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1809581038
@@ -11772,7 +11923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e139f156f35a324d8a69d09ea39e055, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31433c4f922750b4ba196b8f6f781a8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18072,7 +18223,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043977096}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -18595,9 +18746,6 @@ MonoBehaviour:
   interactionDistance: 3
   highlightMaterial: {fileID: 2100000, guid: a068472b52e17a04d876042c4bdd37cd, type: 2}
   camera: {fileID: 963194227}
-  openDoor: {fileID: 261612863}
-  closeDoor: {fileID: 1694106397}
-  mouseInteract: {fileID: 1809581038}
 --- !u!1 &2087154245
 GameObject:
   m_ObjectHideFlags: 0
@@ -21305,6 +21453,7 @@ MonoBehaviour:
   ObjectsDisplay: {fileID: 0}
   interactionType: 0
   player: {fileID: 0}
+  interactionImage: {fileID: 0}
   m_Light: {fileID: 1193500038}
   isOn: 1
 --- !u!33 &2089773943742717759
@@ -24205,6 +24354,7 @@ MonoBehaviour:
   ObjectsDisplay: {fileID: 1838046639}
   interactionType: 2
   player: {fileID: 2087110231}
+  interactionImage: {fileID: 1809581038}
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -24961,6 +25111,7 @@ MonoBehaviour:
   ObjectsDisplay: {fileID: 1838046639}
   interactionType: 2
   player: {fileID: 2087110231}
+  interactionImage: {fileID: 1809581038}
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -25942,6 +26093,7 @@ MonoBehaviour:
   ObjectsDisplay: {fileID: 1838046639}
   interactionType: 2
   player: {fileID: 0}
+  interactionImage: {fileID: 95834933}
   point: {fileID: 341602974}
   actions:
   - m_PersistentCalls:
@@ -28173,6 +28325,7 @@ MonoBehaviour:
   ObjectsDisplay: {fileID: 1838046639}
   interactionType: 2
   player: {fileID: 2087110231}
+  interactionImage: {fileID: 0}
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -28357,12 +28510,13 @@ MonoBehaviour:
   ObjectsDisplay: {fileID: 0}
   interactionType: 0
   player: {fileID: 2087110231}
+  interactionImage: {fileID: 0}
   openAnimation: DoorOpen
   closeAnimation: DoorClose
   waitTimer: 1
   pauseInteraction: 0
-  openDoor: {fileID: 0}
-  closeDoor: {fileID: 0}
+  openDoor: {fileID: 261612863}
+  closeDoor: {fileID: 1694106397}
 --- !u!1 &8296172668638466841
 GameObject:
   m_ObjectHideFlags: 0

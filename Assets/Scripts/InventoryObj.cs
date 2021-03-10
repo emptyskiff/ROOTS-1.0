@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 
@@ -28,13 +29,14 @@ public class InventoryObj : Interactable
 
     void AddToInventory()
     {
-            Debug.Log("Added to inventory");
-            player.GetComponent<InventorySyst>().data.SaveItem(gameObject);
-            audioPlayer.PlaySound(objectName, 0, lowVolume);
+        interactionImage.enabled = false;
+        player.GetComponent<InventorySyst>().data.SaveItem(gameObject);
+        audioPlayer.PlaySound(objectName, 0, lowVolume);
     }
 
     void ShowObject()
     {
+        interactionImage.enabled = false;
         player.GetComponent<InventorySyst>().volume.gameObject.SetActive(true);
         FindObjectOfType<MouseLook>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
@@ -49,7 +51,9 @@ public class InventoryObj : Interactable
 
     public void StopShowing()
     {
-       
+        interactionImage.enabled = true;
+        Debug.Log("Stopped showing");
+        interactionImage.enabled = true;
         audioPlayer.StopSound(objectName);
         isObjectInspecting = false;
     }
@@ -68,7 +72,6 @@ public class InventoryObj : Interactable
     {
         if (isObjectInspecting == false)
         {
-            //Debug.Log("AlternateInteract works");
             AddToInventory();
             OnInteract.Invoke(); //эвент
             Destroy(gameObject);
@@ -76,17 +79,19 @@ public class InventoryObj : Interactable
 
     }
 
-    public override void Highlight(Material highlightMaterial)
+    public override void Highlight()
     {
-        if(look != null)
-        look.material = highlightMaterial;
+        interactionImage.enabled = true;
+        //if(look != null)
+        //look.material = highlightMaterial;
 
     }
 
     public override void Deselect()
     {
-        if(look != null)
-        look.material = original;
+        interactionImage.enabled = false;
+        //if (look != null)
+        //look.material = original;
     }
 
 

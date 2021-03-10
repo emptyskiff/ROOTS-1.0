@@ -21,18 +21,15 @@ public class Switch : Interactable
 
     //public override string GetDescription()
     //{
-    //    if (isOn) return "Press to turn <color=red> off </color> the light";
-    //    return "Press to turn <color=green> on </color> the light";
     //}
 
     public override void Interact()
     {
         isOn = !isOn;
         UpdateLight();
-
     }
 
-    public override void Highlight(Material m)
+    public override void Highlight()
     {
         //throw new System.NotImplementedException();
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIObjectsDisplay : MonoBehaviour
 {
@@ -52,7 +53,6 @@ public class UIObjectsDisplay : MonoBehaviour
                 items[name].SetActive(false);
             Debug.Log("Item non-active");
             }
-
 
 
         }

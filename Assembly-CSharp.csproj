@@ -502,7 +502,6 @@
     <Compile Include="Assets\Scripts\DoorInteraction\BasicDoorController.cs" />
     <Compile Include="Assets\Scripts\DoorInteraction\BasicDoorRaycast.cs" />
     <Compile Include="Assets\Scripts\DoorOpenClose.cs" />
-    <Compile Include="Assets\Scripts\DrawerOpenClode.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\InventoryObj.cs" />

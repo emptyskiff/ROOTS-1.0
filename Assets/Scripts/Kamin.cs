@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class Kamin : Interactable
@@ -37,13 +38,15 @@ public class Kamin : Interactable
         GetObject();
     }
 
-    public override void Highlight(Material m)
+    public override void Highlight()
     {
-      //  throw new System.NotImplementedException();
+        interactionImage.enabled = true;
+        //  throw new System.NotImplementedException();
     }
 
     public override void Deselect()
     {
+        interactionImage.enabled = false;
         //throw new System.NotImplementedException();
     }
 }
